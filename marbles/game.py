@@ -1,7 +1,7 @@
 import random
 import time
 import matplotlib.pyplot as plt
-print(a-ha)
+print(a-ha-ya)
 
 class marbles():
     _NO_MARBLES = 100
