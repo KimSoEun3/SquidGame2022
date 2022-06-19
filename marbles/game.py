@@ -1,6 +1,7 @@
 import random
 import time
 import matplotlib.pyplot as plt
+print(a-ha)
 
 class marbles():
     _NO_MARBLES = 100
@@ -8,6 +9,20 @@ class marbles():
     _MIN_HOLDING = 1
     _marbles_in_hand = 0
     _round = 0
+
+    def bet_marbles_strategy(self, playground_marbles):
+        # you can override this method in this sub-class
+        # you can refer to an object of 'marbles', named as 'playground_marbles'
+        # the return should be the number of marbles bet (> 0)!
+        my_current_marbles = playground_marbles.get_num_of_my_marbles(self)
+        return random.randint(playground_marbles.MIN_HOLDING, my_current_marbles)
+
+    def declare_statement_strategy(self, playground_marbles):
+        # you can override this method in this sub-class
+        # you can refer to an object of 'marbles', named as 'playground_marbles'
+        # the return should be True or False!
+        answer = bool(random.randint(0, 1))
+        return self.set_statement(answer)
 
     def __init__(self, players):
         self.__TEAM_NUM = players[1].team_num # *** This line is for examining your team score
